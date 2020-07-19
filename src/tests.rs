@@ -502,7 +502,7 @@ async fn get_repository_versions_ok_test() {
     client.repository_base = url::Url::parse(&mockito::server_url()).unwrap();
 
     let versions = client
-        .get_repository_versions(std::include_bytes!("../test/public_key"))
+        .get_repository_versions(std::include_bytes!("../test/public_key.der"))
         .await;
 
     let mut expected = HashMap::with_capacity(3);
